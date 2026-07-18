@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hortaliças Jogi - hortaliças frescas, cardápio semanal e informações da produção." />
+  <title>HORTALIÇAS JOGI</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/cardapio.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js"></script>
+
+  <!-- Barba.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+
+  <script src="./js/intro.js" defer></script>
+  <script src="./js/transition.js" defer></script>
+  <script type="module" src="./js/main.js"></script>
+</head>
+<body>
+
+<!-- INTRO fica FORA do wrapper do Barba: só roda na primeira carga da página -->
+<div class="intro" id="intro">
+
+  <div class="intro-clouds">
+    <svg class="nuvem nuvem-1" viewBox="0 0 200 100" preserveAspectRatio="none"><path d="M20,70 Q10,40 40,35 Q45,10 80,20 Q110,5 130,30 Q170,25 165,60 Q180,80 150,85 Q100,95 60,90 Q20,95 20,70 Z" fill="#ffffff"/></svg>
+
+    <svg class="nuvem nuvem-2" viewBox="0 0 200 100" preserveAspectRatio="none"><path d="M15,65 Q5,35 45,32 Q55,8 90,18 Q120,2 145,28 Q180,20 175,55 Q190,78 155,82 Q105,92 65,86 Q15,92 15,65 Z" fill="#f4f1ea"/></svg>
+
+    <svg class="nuvem nuvem-3" viewBox="0 0 200 100" preserveAspectRatio="none"><path d="M25,68 Q12,38 42,33 Q50,10 82,20 Q115,5 138,29 Q172,22 168,58 Q185,79 152,84 Q102,93 62,88 Q25,93 25,68 Z" fill="#ffffff"/></svg>
+
+    <svg class="nuvem nuvem-4" viewBox="0 0 200 100" preserveAspectRatio="none"><path d="M18,66 Q8,36 42,33 Q50,9 84,19 Q116,4 140,29 Q175,21 170,56 Q187,78 153,83 Q103,92 63,87 Q18,92 18,66 Z" fill="#f4f1ea"/></svg>
+
+    <svg class="nuvem nuvem-5" viewBox="0 0 200 100" preserveAspectRatio="none"><path d="M22,69 Q10,39 40,34 Q48,11 81,21 Q113,6 136,31 Q171,24 166,59 Q183,80 151,85 Q101,94 61,89 Q22,94 22,69 Z" fill="#ffffff"/></svg>
+
+    <svg class="nuvem nuvem-6" viewBox="0 0 200 100" preserveAspectRatio="none"><path d="M17,64 Q7,34 41,31 Q49,7 83,17 Q114,2 139,27 Q174,19 169,54 Q186,76 152,81 Q102,90 62,85 Q17,90 17,64 Z" fill="#f4f1ea"/></svg>
+  </div>
+
+  <div class="intro-scene">
+    <svg class="sol" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="#ffe9a8"/></svg>
+
+    <svg class="montanha montanha-longe" viewBox="0 0 1440 400" preserveAspectRatio="none">
+      <path d="M0,400 L0,220 L180,90 L340,200 L520,60 L700,180 L880,40 L1080,190 L1260,80 L1440,220 L1440,400 Z" fill="#a9c9b8"/>
+    </svg>
+
+    <svg class="montanha montanha-meio" viewBox="0 0 1440 400" preserveAspectRatio="none">
+      <path d="M0,400 L0,260 L220,140 L400,240 L600,110 L820,230 L1020,100 L1220,220 L1440,150 L1440,400 Z" fill="#6f9c7d"/>
+    </svg>
+
+    <svg class="montanha montanha-perto" viewBox="0 0 1440 400" preserveAspectRatio="none">
+      <path d="M0,400 L0,300 L260,180 L480,280 L720,160 L960,270 L1200,180 L1440,260 L1440,400 Z" fill="var(--verde-escuro)"/>
+    </svg>
+  </div>
+
+  <div class="intro-content">
+    <h1 class="intro-title">HORTALIÇAS JOGI</h1>
+  </div>
+</div>
+ 
+
+
+<div data-barba="wrapper">
+  <div data-barba="container" data-barba-namespace="home">
+
+    <header class="hero-header">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1>Hortaliças Jogi</h1>
+        <p>Frescor direto da produção</p>
+
+        <a href="cardapio.html" class="ver-cardapio-btn">
+          <span class="btn-label">Ver cardápio</span>
+          <span class="btn-arrow">↓</span>
+        </a>
+      </div>
+    </header>
+
+  </div>
+</div>
+
+</body>
+</html>

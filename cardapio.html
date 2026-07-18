@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hortaliças Jogi - cardápio semanal, hortaliças frescas direto da produção." />
+  <title>Cardápio | HORTALIÇAS JOGI</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/cardapio.css" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Barba.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+  <script src="./js/transition.js" defer></script>
+
+  <script type="module" src="./js/main.js"></script>
+</head>
+<body>
+
+<div data-barba="wrapper">
+  <div data-barba="container" data-barba-namespace="cardapio-hero">
+
+    <header class="pai">
+      <nav class="navegar">
+        <div class="nav-lado nav-esquerda">
+          <a href="index.html">Início</a>
+        </div>
+
+          <img src="./img/logo.png" alt="Hortaliças Jogi" width="50px" height="50px">
+        </a>
+
+       
+    </header>
+
+    <section class="cardapio-section cardapio-page" id="cardapio">
+      <div class="container">
+        <header>
+          <span class="eyebrow">Cardápio da semana</span>
+          <h2>Produtos disponíveis</h2>
+          <p>Produtos novos toda semana</p>
+        </header>
+
+        <div id="lista-semanas"></div>
+
+        <div class="cta">
+          <h3>Faça seu pedido</h3>
+          <p>Entre em contato para reservas e encomendas.</p>
+          <a class="cta-btn" href="https://wa.me/+5561996433209" target="_blank">
+            Fale conosco
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Hortaliças Jogi. Todos os direitos reservados.</p>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>

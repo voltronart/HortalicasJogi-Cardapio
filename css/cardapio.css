@@ -1,0 +1,379 @@
+/* ===== NAV (só usado no cardapio.html) ===== */
+
+.pai {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 20px 32px;
+  background: var(--verde-escuro);
+}
+
+.navegar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-lado {
+  display: flex;
+  gap: 28px;
+  flex: 1;
+}
+
+.nav-esquerda {
+  justify-content: flex-start;
+}
+
+.nav-direita {
+  justify-content: flex-end;
+}
+
+.navegar a {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--creme);
+  transition: opacity 0.25s ease;
+}
+
+.navegar a:hover {
+  opacity: 0.75;
+}
+
+.nav-logo img {
+  height: 42px;
+  width: auto;
+}
+
+/* ===== CARDÁPIO SEM HERO (nav é position:absolute, precisa de espaço no topo) ===== */
+
+.cardapio-page {
+  padding-top: 140px;
+}
+
+/* ===== SEÇÃO CARDÁPIO ===== */
+
+.cardapio-section {
+  padding: 96px 24px;
+  background: var(--creme);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cardapio-section header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--verde-medio);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.cardapio-section h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin: 0 0 8px;
+  color: var(--verde-escuro);
+}
+
+.cardapio-section > .container > header > p {
+  color: #5a5a52;
+  margin: 0;
+}
+
+/* bloco de cada semana */
+
+.dia {
+  margin-bottom: 48px;
+}
+
+.dia h3 {
+  font-size: 1.2rem;
+  color: var(--terra);
+  border-bottom: 2px solid var(--verde-claro);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+
+
+.dia ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 ;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.dia li {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.dia li:hover {
+  transform: translateY(-4px);
+  border-radius: 1px solid green;
+}
+
+.card-art {
+  width: 64px;
+  height: 64px;
+}
+
+.card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-plate {
+  display: flex;
+}
+
+.card-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.etiqueta-calorias,
+.card-desc {
+  display: none;
+}
+
+.dia li.is-active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(400px, 88vw);
+   color: black;
+  z-index: 200;
+  cursor: default;
+  gap: 0;
+  padding: 40px;
+  background: linear-gradient(160deg, #f8f5ee, #ece6d6);
+  border: 3px solid var(--laranja);
+  border-radius: 18px;
+ 
+}
+
+/* janela de arte no topo, como o retrato de uma carta */
+.dia li.is-active .card-art {
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 0;
+}
+
+.dia li.is-active .card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* plaquinha do nome, sobrepondo a borda entre a arte e o corpo da carta */
+.dia li.is-active .card-plate {
+  margin: -18px 12px 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  justify-content: center;
+  z-index: 2;
+}
+
+.dia li.is-active .item-nome {
+  color:black;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* linha de stats: preço + calorias, como custo de mana / ataque de uma carta */
+.dia li.is-active .card-stats {
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 14px;
+  border-top: 1px dashed rgba(107, 74, 48, 0.35);
+  border-bottom: 1px dashed rgba(107, 74, 48, 0.35);
+  margin-bottom: 10px;
+}
+
+.dia li.is-active .etiqueta-preco,
+.dia li.is-active .etiqueta-calorias {
+  display: inline-block;
+  font-size: 0.85rem;
+}
+
+.dia li.is-active .etiqueta-preco {
+  color: black;
+  font-weight: 700;
+}
+
+.dia li.is-active .etiqueta-calorias {
+  color: var(--verde-medio);
+  font-weight: 600;
+}
+
+/* texto de "lore" no rodapé da carta */
+.dia li.is-active .card-desc {
+  display: block;
+  padding: 0 14px 4px;
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--texto-escuro);
+}
+
+/* botão de fechar (X) */
+.card-close {
+  display: none;
+}
+
+.dia li.is-active .card-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--laranja);
+  background: var(--verde-escuro);
+  color: var(--creme);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 210;
+}
+
+.dia li.is-active .card-close:hover {
+  background: var(--laranja);
+}
+
+/* escurece levemente o resto da página, sem nenhum blur */
+
+
+.item-nome {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--texto-escuro);
+}
+
+.etiqueta-preco {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--laranja);
+}
+
+/* CTA */
+
+.cta {
+  margin-top: 64px;
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--verde-escuro);
+  border-radius: 20px;
+  color: var(--creme);
+}
+
+.cta h3 {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+}
+
+.cta p {
+  margin: 0 0 24px;
+  opacity: 0.8;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 999px;
+  background: var(--laranja);
+  color: var(--creme);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  background: #c56a30;
+}
+
+/* ===== FOOTER ===== */
+
+.site-footer {
+  padding: 32px 24px;
+  text-align: center;
+  background: var(--verde-escuro);
+  color: rgba(244, 241, 234, 0.65);
+  font-size: 0.85rem;
+}
+
+/* ===== TRANSIÇÃO BARBA (cobre a tela) ===== */
+
+.barba-transition-cover {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  pointer-events: none;
+}
+
+.faixa-cortina {
+  flex: 1;
+  height: 100%;
+  background: var(--verde-escuro);
+  transform-origin: bottom;
+  transform: scaleY(0);
+}
+
+.faixa-cortina:nth-child(even) {
+  background: var(--verde-medio);
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 720px) {
+  .dia ul {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .dia li.is-active {
+    width: min(320px, 90vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dia li,
+  .cta-btn {
+    transition: none;
+  }
+}

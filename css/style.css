@@ -1,0 +1,231 @@
+/* =========================================================
+   HORTALIÇAS JOGI — style.css
+   Escopo: base + intro + hero do index.html (sem nav)
+   ========================================================= */
+
+:root {
+  --verde-escuro: #1f2e1a;
+  --verde-medio: #3d5c34;
+  --verde-claro: #9ecb6f;
+  --creme: #f4f1ea;
+  --terra: #6b4a30;
+  --laranja: #d97a3f;
+  --texto-escuro: #23261f;
+  --sombra: rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: var(--texto-escuro);
+  background: var(--creme);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== INTRO ===== */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #bfe4f5 0%, #d8f0e0 60%, #eef7e8 100%);
+  overflow: hidden;
+}
+
+.intro-clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.nuvem {
+  position: absolute;
+  opacity: 0;
+  height: auto;
+  display: block;
+}
+
+.nuvem-1 { top: 15%; left: 15%;  width: 300px; }
+.nuvem-2 { top: 20%; right: 8%; width: 340px; }
+.nuvem-3 { top: 45%; left: 8%;  width: 280px; }
+.nuvem-4 { top: 50%; right: 5%; width: 260px; }
+.nuvem-5 { top: 68%; left: 15%; width: 240px; }
+.nuvem-6 { top: 72%; right: 12%; width: 280px; }
+.intro-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.intro-title {
+  opacity: 0;
+  color: var(--verde-escuro);
+  font-size: clamp(2rem, 6vw, 4rem);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+.intro-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* abaixo do texto (z-index: 2), mas as nuvens ficam acima de tudo */
+  pointer-events: none;
+}
+
+.sol {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  opacity: 0;
+}
+
+.montanha {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  opacity: 0;
+}
+
+.montanha-longe { z-index: 1; height: 40%; }
+.montanha-meio  { z-index: 2; height: 45%; }
+.montanha-perto { z-index: 3; height: 50%; }
+
+/* nuvens ficam por cima do cenário, atrás só do texto */
+.intro-clouds {
+  z-index: 2;
+}
+
+.intro-content {
+  z-index: 3;
+}
+
+@media (max-width: 720px) {
+  .nuvem-1 { width: 180px; }
+  .nuvem-2 { width: 220px; }
+  .nuvem-3 { width: 190px; }
+  .nuvem-4 { width: 160px; }
+  .nuvem-5 { width: 140px; }
+  .nuvem-6 { width: 180px; }
+}
+
+/* ===== HERO ===== */
+
+.hero-header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/fundo.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 8, 0.35) 0%,
+    rgba(10, 20, 8, 0.55) 55%,
+    rgba(10, 20, 8, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--creme);
+  padding: 0 24px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin: 0 0 36px;
+}
+
+/* ===== BOTÃO VER CARDÁPIO ===== */
+
+.ver-cardapio-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 241, 234, 0.4);
+  background: rgba(244, 241, 234, 0.08);
+  color: var(--creme);
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.ver-cardapio-btn:hover {
+  background: rgba(158, 203, 111, 0.18);
+  border-color: var(--verde-claro);
+  transform: translateY(-2px);
+}
+
+.ver-cardapio-btn .btn-arrow {
+  display: inline-block;
+  animation: btn-bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes btn-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ver-cardapio-btn .btn-arrow {
+    animation: none;
+  }
+}
